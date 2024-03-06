@@ -17,7 +17,7 @@ var scenario = Scenario.Create("http_scenario", async context =>
     
     return response;
 })
-.WithWarmUpDuration(TimeSpan.FromSeconds(5))
+.WithWarmUpDuration(TimeSpan.FromSeconds(Configurations.WarmUpDurationSeconds))
 .WithLoadSimulations(
     Simulation.Inject(
         rate: Configurations.VirtualUsers,
